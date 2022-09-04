@@ -2,24 +2,12 @@
 session_start();
 // Change this to your connection info.
 
-/*
-//Get Heroku ClearDB connection information
-$cleardb_url = parse_url(getenv("CLEARDB_DATABASE_URL"));
-$cleardb_server = $cleardb_url["host"];
-$cleardb_username = $cleardb_url["user"];
-$cleardb_password = $cleardb_url["pass"];
-$cleardb_db = substr($cleardb_url["path"],1);
-$active_group = 'default';
-$query_builder = TRUE;
-// Connect to DB
-$conn = mysqli_connect($cleardb_server, $cleardb_username, $cleardb_password, $cleardb_db);
-*/
+// mysql://bf1cb16bd43300:b2bc26d8@us-cdbr-east-06.cleardb.net/heroku_244fba11b1aac40?reconnect=true
 
-
-$DATABASE_HOST = 'localhost';
-$DATABASE_USER = 'root';
-$DATABASE_PASS = '';
-$DATABASE_NAME = 'phplogin';
+$DATABASE_HOST = 'us-cdbr-east-06.cleardb.net';
+$DATABASE_USER = 'bf1cb16bd43300';
+$DATABASE_PASS = 'b2bc26d8';
+$DATABASE_NAME = 'heroku_244fba11b1aac40';
 // Try and connect using the info above.
 $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
 if ( mysqli_connect_errno() ) {
@@ -67,4 +55,3 @@ if ($stmt->num_rows > 0) {
 	// Incorrect username
 	echo 'Incorrect username and/or password!';
 }
-?>
